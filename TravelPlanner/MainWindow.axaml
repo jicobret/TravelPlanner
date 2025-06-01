@@ -1,9 +1,43 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TravelPlanner.MainWindow"
-        Title="TravelPlanner">
-    Welcome to Avalonia!
+        Title="Travel Planner" Width="600" Height="600">
+    <StackPanel Margin="10" Spacing="10">
+        
+        <TextBlock Text="Imie:"/>
+        <TextBox x:Name="NameTextBox"/>
+
+        <TextBlock Text="Wybierz kraj:"/>
+        <ComboBox x:Name="CountryComboBox" SelectionChanged="CountryComboBox_SelectionChanged">
+            <ComboBoxItem Content="Francja"/>
+            <ComboBoxItem Content="Wlochy"/>
+            <ComboBoxItem Content="Japonia"/>
+        </ComboBox>
+
+        <Image x:Name="CountryImage" Height="200" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Text="Atrakcje do odwiedzenia:"/>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <CheckBox x:Name="MuseumsCheckBox" Content="Muzea"/>
+            <CheckBox x:Name="RestaurantsCheckBox" Content="Restauracje"/>
+            <CheckBox x:Name="MonumentCheckBox" Content="Zabytki"/>
+        </StackPanel>
+
+        <TextBlock Text="Srodek transportu:"/>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <RadioButton GroupName="Transport" Content="Samolot" IsChecked="True" x:Name="PlaneRadio"/>
+            <RadioButton GroupName="Transport" Content="Pociag" x:Name="TrainRadio"/>
+            <RadioButton GroupName="Transport" Content="Samochod" x:Name="CarRadio"/>
+        </StackPanel>
+
+        <TextBlock Text="Dodaj miasto:"/>
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBox x:Name="CityInput"/>
+            <Button Content="Dodaj miasto" Click="AddCity_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="CitiesListBox" Height="100"/>
+
+        <Button Content="Podsumuj" Click="ShowSummary_Click"/>
+    </StackPanel>
 </Window>

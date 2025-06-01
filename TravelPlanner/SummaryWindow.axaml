@@ -1,0 +1,8 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TravelPlanner.SummaryWindow"
+        Title="Podsumowanie podróży" Width="400" Height="400">
+    <ScrollViewer>
+        <StackPanel x:Name="SummaryPanel" Margin="10" Spacing="10"/>
+    </ScrollViewer>
+</Window>
